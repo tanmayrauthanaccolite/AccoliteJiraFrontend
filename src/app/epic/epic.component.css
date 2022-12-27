@@ -1,0 +1,14 @@
+div{
+    background-color: #E5E4E2;
+    width:32%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    margin :30px 5px auto 5px;
+    padding-bottom: 15px;
+}
+header{
+    padding: 30px;
+    background-color: #E5E4E2;
+}
+

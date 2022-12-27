@@ -1,0 +1,10 @@
+{
+    "/epic":{
+        "target":"http://localhost:8080/project/epic",
+        "secure":false,
+        "pathRewrite":{
+            "^/epic":""
+        },
+        "changeOrigin":true
+    }
+}

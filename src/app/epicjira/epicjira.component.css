@@ -1,0 +1,52 @@
+#prio{
+    width: 10px;
+    height:10px;
+}
+#circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    background: #79c6ec;
+}
+mat-icon{
+    font-size: small;
+}
+mat-grid-list{
+    margin:4px 4px 4px 4px;
+}
+mat-grid-tile{
+    padding:0 8px 16px 8px;
+    width:100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 80px auto 80px;
+    width: 95%;
+}
+  
+.grid-container > div {
+    text-align: center;
+}
+.grid-item9{
+    margin-bottom: 2em;
+}
+.grid-item6{
+    margin-left: 2em;
+}
+
+/* .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+} */
+.grid-item4{
+    margin-left: 2.5em;
+    margin-top: 0.5em;
+}
+.grid-item1,.grid-item2{
+    margin-top: 1em;
+}
