@@ -1,0 +1,32 @@
+<!-- print epic details -->
+<mat-grid-list cols="1" rowHeight="70px" style="background-color: white;" *ngIf="epic.status == x">
+    <mat-grid-tile>
+        <div class="grid-container">
+            <div class="grid-item1"><mat-icon>offline_bolt</mat-icon>{{epic.epicId}}</div>
+            <div class="grid-item2" >{{epic.epicLAbel}}</div>
+            <div class="grid-item3"></div>
+            <div id="prio" [style.background]="changePriorityColor(epic.priority)" class="grid-item4"></div>
+            <div class="grid-item5">{{epic.epicDescription}}</div>
+            <div id="circle" class="grid-item6">{{epic.assignee.charAt(0)}}</div>
+            <div class="grid-item7"></div>
+            <div class="grid-item8"></div>
+            <div class="grid-item9">{{epic.assignee}}</div>
+            <!-- <div class="item">
+                <div class="grid-item1"><mat-icon>offline_bolt</mat-icon> {{epic.epicId}} </div>
+                <div class="grid-item2"><strong>{{epic.epicLAbel}}</strong></div>
+                <div class="grid-item3"></div>
+            </div>
+            <div class="item">
+                <div class="grid-item3"></div>
+                <div id="prio" [style.background]="changePriorityColor(epic.priority)" class="grid-item4"></div>
+                <div class="grid-item5">{{epic.epicDescription}}</div>
+                <div id="circle, grid-item6">{{epic.assignee.charAt(0)}}</div>
+            </div>
+            <div class="item">
+                <div class="grid-item7"></div>
+                <div class="grid-item8"></div>
+                <div class="grid-item9">{{epic.assignee}} </div>
+            </div> -->
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
