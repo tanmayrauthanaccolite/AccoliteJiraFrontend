@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
+import { CreateIssueService } from '../create-issue.service';
 import { Epic } from '../epic';
 import { EpicService } from '../epic.service';
+import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
+import { CreateIssueComponent } from '../create-issue/create-issue.component';
+
 @Component({
   selector: 'app-epic',
   templateUrl: './epic.component.html',
   styleUrls: ['./epic.component.css']
 })
 export class EpicComponent {
-  constructor(public service:EpicService){
+  constructor(public service:EpicService,
+    public createIssueFormService : CreateIssueService,
+    public dialog : MatDialog){
 
   }
 xy = document.getElementById("")
@@ -24,6 +30,15 @@ phase=["To-Do","In Progress","Done"]
 //   {epicId:9, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Tanmay",priority:2,status:"In Progress" ,projectId:1}
 // ];
 epics:Epic[];
+
+onCreate(){
+  console.log(this.createIssueFormService.createIssueForm)
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.disableClose = true;
+  dialogConfig.autoFocus = true;
+ this.dialog.open(CreateIssueComponent,{height: '90%',
+ width: '60%',})
+}
 ngOnInit(){
 this.service.epic().subscribe(epicData=>this.epics=epicData)
 }

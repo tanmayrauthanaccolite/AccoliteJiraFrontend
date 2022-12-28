@@ -8,7 +8,12 @@ div{
     padding-bottom: 15px;
 }
 header{
+    text-align: center;
     padding: 30px;
     background-color: #E5E4E2;
 }
 
+.create-button{
+    float: right;
+    margin-bottom: 20px;
+}

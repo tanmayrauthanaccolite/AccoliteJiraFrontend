@@ -1,7 +1,11 @@
-<header style ="text-align: center; font-size:20px;">EPIC VIEW</header>
+<header style ="text-align: center; font-size:20px;">EPIC VIEW
+    <button mat-raised-button class = "create-button" (click) = "onCreate()" >Create Epic</button>
+</header>
 <div *ngFor="let x of phase">
     <!-- for printing different phases -->
     {{x}}
     <span *ngFor="let epic of epics"> <app-epicjira [epic]="epic" [x]="x"></app-epicjira> </span>
     
 </div>
+
+<!-- <app-create-issue></app-create-issue> -->

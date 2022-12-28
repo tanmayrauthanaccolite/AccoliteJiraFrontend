@@ -5,27 +5,30 @@ import { AppComponent } from './app.component';
 import { EpicComponent } from './epic/epic.component';
 import { EpicjiraComponent } from './epicjira/epicjira.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule} from '@angular/material/grid-list';
-import {MatIconModule} from'@angular/material/icon'
-import {MatCardModule} from '@angular/material/card'
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './material/material.module';
+import { CreateIssueComponent } from './create-issue/create-issue.component'
+import { CreateIssueService } from './create-issue.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     EpicComponent,
-    EpicjiraComponent
+    EpicjiraComponent,
+    CreateIssueComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule,
-    MatIconModule,
-    MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CreateIssueService],
   bootstrap: [AppComponent],
+  entryComponents : [CreateIssueComponent],
   exports:[AppComponent]
 })
 export class AppModule { }

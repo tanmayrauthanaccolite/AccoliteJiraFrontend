@@ -1,0 +1,107 @@
+<h2 mat-dialog-title>Create Issue<span class="cross"><mat-icon id = "close-icon" (click)="onNoClick()">close</mat-icon></span></h2>
+<div mat-dialog-content>
+<form [formGroup] = "createIssueFormService.createIssueForm" class="create-issue-form" (ngSubmit) = "onCreateIssue()">
+    <div class = "form-container">
+    <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Project</mat-label>
+          <input matInput>
+        </mat-form-field>
+    </p>
+
+        <p>
+            <mat-form-field appearance="fill" class="form-full-width">
+                <mat-label>Issue Type</mat-label>
+                <mat-select formControlName = "issueType">
+                  <mat-option value="option1">Epic</mat-option>
+                  <mat-option value="option2">Story</mat-option>
+                  <mat-option value="option3">Task</mat-option>
+                </mat-select>
+                <mat-error>This field is mandatory</mat-error>
+              </mat-form-field>
+        </p>
+    <hr>
+    <br>
+
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName = "issueStatus">
+            <mat-option value="option1">To Do</mat-option>
+            <mat-option value="option2">In Progress</mat-option>
+            <mat-option value="option3">Done</mat-option>
+          </mat-select>
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <label class = "radio-label">Priority</label>
+        <br>
+        <mat-radio-group formControlName = "issuePriority">
+          <mat-radio-button value = "1">1</mat-radio-button>
+          <mat-radio-button value = "2">2</mat-radio-button>
+          <mat-radio-button value = "3">3</mat-radio-button>
+        </mat-radio-group>
+      </p>
+
+      <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Jira Summary</mat-label>
+          <input formControlName = "issueSummary" matInput>
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Description</mat-label>
+          <textarea formControlName = "issueDescription" matInput></textarea>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Assignee</mat-label>
+          <input formControlName = "issueAssignee" matInput>
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Reporter</mat-label>
+          <input formControlName = "issueReporter" matInput>
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+      </p>
+<p>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose start date</mat-label>
+        <input formControlName = "issueStartDate" matInput [matDatepicker]="picker1">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error>This field is mandatory</mat-error>
+      </mat-form-field>
+    </p>
+<br>
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose end date</mat-label>
+            <input formControlName = "issueEndDate" matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+</p>
+
+    </div>
+    
+</form>  
+</div>
+<mat-dialog-actions class = "action">
+    <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createIssueFormService.createIssueForm.invalid">Create</button>
+    <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
+</mat-dialog-actions>
