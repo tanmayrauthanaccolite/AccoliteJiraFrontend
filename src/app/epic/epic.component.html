@@ -1,7 +1,7 @@
-<header style ="text-align: center; font-size:20px;">EPIC VIEW</header>
+<header class="display-4">Epic View</header>
 <div *ngFor="let x of phase">
     <!-- for printing different phases -->
-    {{x}}
+    <h4>{{x}}</h4>
     <span *ngFor="let epic of epics"> <app-epicjira [epic]="epic" [x]="x"></app-epicjira> </span>
     
 </div>
