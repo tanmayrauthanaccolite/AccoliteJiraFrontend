@@ -1,22 +1,33 @@
-#prio{
+.prio{
     width: 10px;
     height:10px;
+    position: absolute;
+    top:21px;
+    left:10px;
 }
-#circle{
-    width: 20px;
-    height: 20px;
+.circle{
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    font-size: 15px;
+    font-size: 20px;
     color: #fff;
-    line-height: 20px;
+    line-height: 40px;
     text-align: center;
     background: #79c6ec;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    position: absolute;
+    top:20px;
+    right:10px;
 }
 mat-icon{
     font-size: small;
 }
 mat-grid-list{
     margin:4px 4px 4px 4px;
+    background-size: cover;
+    border-radius: 15px;
 }
 mat-grid-tile{
     padding:0 8px 16px 8px;
@@ -25,28 +36,44 @@ mat-grid-tile{
 .grid-container {
     display: grid;
     grid-template-columns: 80px auto 80px;
-    width: 95%;
+    width: fit-content;
+    margin-top: 1.5em;
 }
   
 .grid-container > div {
-    text-align: center;
+    width: fit-content;
 }
-.grid-item9{
-    margin-bottom: 2em;
-}
-.grid-item6{
-    margin-left: 2em;
-}
-
 /* .item{
     display: flex;
     justify-content: space-between;
     align-items: center;    
 } */
-.grid-item4{
-    margin-left: 2.5em;
-    margin-top: 0.5em;
+.icon{
+    position: relative;
+    top:15px;
 }
-.grid-item1,.grid-item2{
-    margin-top: 1em;
+.epicid{
+    position: absolute;
+    top: 18px;
+    left : 30px;
+}
+.epiclabel{
+    position: absolute;
+    top:28px;
+    left: 11px;
+    font-weight: 400;
+    display: inline-block;
+}
+.desc{
+    position: absolute;
+    top: 58px;
+    left:10px;
+    font-weight: 200;
+    margin-right: 70px;
+    text-align: justify;
+}
+.assignee{
+    position: absolute;
+    top:70px;
+    right: 10px;;
 }

@@ -1,6 +1,6 @@
 export interface Epic {
     epicId: number;
-    epicLAbel: string;
+    epicLabel: string;
     epicDescription: string;
     assignee: string;
     priority:number;

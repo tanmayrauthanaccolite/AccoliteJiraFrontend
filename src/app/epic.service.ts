@@ -10,6 +10,6 @@ export class EpicService {
 
   constructor(private http :HttpClient) { }
   epic():Observable<any>{
-     return this.http.get("/epic");
+    return this.http.get("http://localhost:8080/project/epic");
   }
 }
