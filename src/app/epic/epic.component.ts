@@ -20,7 +20,7 @@ export class EpicComponent {
 
   }
 xy = document.getElementById("")
-phase=["To-Do","In Progress","Done"]
+phase=["To-do","In Progress","Done"]
 // epics: Epic[] = [
 //   {epicId:1, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Tanmay",priority:1,status:"To-Do" ,projectId:1},
 //   {epicId:2, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Ritiksha",priority:2,status:"Done" ,projectId:1},
@@ -52,7 +52,7 @@ onCreateProject(){
 }
 
 ngOnInit(){
-this.service.epic().subscribe(epicData=>this.epics=epicData)
+this.service.epic().subscribe((epicData)=>{this.epics=epicData})
 }
 
 
