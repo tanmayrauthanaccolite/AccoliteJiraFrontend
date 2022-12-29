@@ -20,6 +20,7 @@ onCreateIssue(){
   this.data = this.createIssueFormService.createIssueForm.value;
   this.createIssueFormService.createIssueForm.reset();
   console.log(this.data);
+  
 }
   onClear(){
     this.createIssueFormService.createIssueForm.reset();

@@ -4,6 +4,8 @@ import { Epic } from '../epic';
 import { EpicService } from '../epic.service';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
 import { CreateIssueComponent } from '../create-issue/create-issue.component';
+import { CreateProjectService } from '../create-project.service';
+import { CreateProjectComponent } from '../create-project/create-project.component';
 
 @Component({
   selector: 'app-epic',
@@ -13,6 +15,7 @@ import { CreateIssueComponent } from '../create-issue/create-issue.component';
 export class EpicComponent {
   constructor(public service:EpicService,
     public createIssueFormService : CreateIssueService,
+    public createProjectFormService : CreateProjectService,
     public dialog : MatDialog){
 
   }
@@ -39,7 +42,18 @@ onCreate(){
  this.dialog.open(CreateIssueComponent,{height: '90%',
  width: '60%',})
 }
+onCreateProject(){
+  console.log(this.createProjectFormService.createProjectForm)
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.disableClose = true;
+  dialogConfig.autoFocus = true;
+ this.dialog.open(CreateProjectComponent,{height: '85%',
+ width: '40%',})
+}
+
 ngOnInit(){
 this.service.epic().subscribe(epicData=>this.epics=epicData)
 }
+
+
 }

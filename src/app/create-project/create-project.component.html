@@ -1,0 +1,40 @@
+<h2 mat-dialog-title class="title">Create Project<span class="cross"><mat-icon (click)="onNoClick()">close</mat-icon></span></h2>
+<div mat-dialog-content>
+<form [formGroup] = "createProjectFormService.createProjectForm" class = "create-project-form" (ngSubmit) = "saveProject()">
+<div class = "form-container">
+
+    <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Project Title</mat-label>
+          <input formControlName = "projectTitle" matInput>
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="form-full-width">
+        <mat-label>Description</mat-label>
+        <textarea formControlName = "projectDescription" matInput></textarea>
+      </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose start date</mat-label>
+            <input formControlName = "projectStartDate" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </p>
+
+
+
+</div>
+</form>
+</div>
+
+<mat-dialog-actions class = "action">
+  <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createProjectFormService.createProjectForm.invalid">Create</button>
+  <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
+</mat-dialog-actions>

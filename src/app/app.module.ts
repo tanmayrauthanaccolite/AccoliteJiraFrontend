@@ -10,13 +10,16 @@ import { MaterialModule } from './material/material.module';
 import { CreateIssueComponent } from './create-issue/create-issue.component'
 import { CreateIssueService } from './create-issue.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import { CreateProjectService } from './create-project.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     EpicComponent,
     EpicjiraComponent,
-    CreateIssueComponent
+    CreateIssueComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [CreateIssueService],
+  providers: [CreateIssueService,CreateProjectService],
   bootstrap: [AppComponent],
   entryComponents : [CreateIssueComponent],
   exports:[AppComponent]

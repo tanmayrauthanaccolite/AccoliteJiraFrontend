@@ -1,23 +1,24 @@
 .form-full-width {
-    width: 60%;
-  }
+  width: 60%;
+}
 
-  .form-container{
-    width: 90%;
-    padding: 5%;
-  }
-  .dialog-button{
-    /* float: right; */
-    margin  : 2px;
-  } 
+.form-container{
+  width: 90%;
+  padding: 5%;
+}
 
-  .cross{
-    margin-top: 20px;
-    float: right;
-  }
+.dialog-button{
+  /* float: right; */
+  margin  : 1px;
+} 
 
-  .action{
-    margin-top: 20px;
-    margin-right: 10px;
-    float:right;
-  }
+.cross{
+  margin-top: 20px;
+  float: right;
+}
+
+.action{
+  margin-top: 20px;
+  margin-right: 10px;
+  float:right;
+}
