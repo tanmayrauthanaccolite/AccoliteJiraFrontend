@@ -26,5 +26,6 @@ phase=["To-do","In Progress","Done"]
 epics:Epic[];
 ngOnInit(){
 this.service.epic().subscribe((epicData)=>{this.epics=epicData})
+console.log(this.epics);
 }
 }

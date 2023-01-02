@@ -1,0 +1,5 @@
+<header class="display-4">Sprint View</header>
+<div *ngFor="let x of phase">
+    <h4>{{x}}</h4>
+    <span *ngFor="let task of tasks"><app-taskjira [task]="task" [x]="x"></app-taskjira> </span> 
+</div>

@@ -2,6 +2,7 @@
   <mat-grid-list cols="1" rowHeight="100px" style="background-color: white;" *ngIf="epic.status == x" >
     <mat-grid-tile>
         <div>
+          <button (click)="displayTasks()">Click me</button>
           <div class="circle text-uppercase">{{epic.assignee.charAt(0)}}</div>
           <div class="assignee">{{epic.assignee}}</div>
           <p class="epicid">{{epic.epicId}}</p>

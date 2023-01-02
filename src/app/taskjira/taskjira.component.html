@@ -1,0 +1,15 @@
+ <!-- print task details  -->
+ <mat-grid-list cols="1" rowHeight="100px" style="background-color: white;" *ngIf="task.taskPhase == x" >
+    <mat-grid-tile>
+        <div>
+          <div class="circle text-uppercase">{{task.taskAssignee.charAt(0)}}</div>
+          <div class="assignee">{{task.taskReportee}}</div>
+          <p class="epicid">{{task.taskId}}</p>
+          <div class="epiclabel" >{{task.taskTitle}}       
+          <mat-icon class="icon">offline_bolt</mat-icon>
+          </div>
+          <div class="prio" [style.background]="changePriorityColor(task.taskPriority)"></div>
+          <div class="desc">{{task.taskType}}</div>
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>
