@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Epic } from '../epic';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
+import {Employee} from '../employee';
+import { SlicePipe } from '@angular/common';
 
 @Component({
   selector: 'app-task',
@@ -12,9 +14,22 @@ export class TaskComponent {
 constructor(public taskservice:TaskService){}
 phase=["To-Do","In Progress","Done"]
 tasks:Task[];
+employees:Employee[];
 ngOnInit():void{
-//this.taskservice.epicObservable.subscribe((EpicData)=>{console.log(EpicData)});
 this.taskservice.getAllTasks().subscribe((tasksArray)=>{this.tasks=tasksArray});
-this.taskservice.getAllTasks().subscribe((tasksArray)=>console.log(tasksArray));
+this.taskservice.getEmployees().subscribe((data)=>{this.employees=data;console.log(data);console.log(this.employees);});
 }
+// nav function
+openNav() {
+  document.getElementById("mySidenav").style.width="250px";
+}
+closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+getJiraOfEmployee()
+{
+  console.log("hiiii");
+  this.taskservice.getTasksofEmployee().subscribe((tasksArray)=>{this.tasks=tasksArray;console.log(this.tasks);});
+}
+
 }

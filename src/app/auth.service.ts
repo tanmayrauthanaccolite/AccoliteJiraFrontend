@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,6 @@ export class AuthService {
   {
     console.log(data);
     // console.log(this.http.get('http://localhost:8080/checkcredentials',data));
-    return this.http.post('http://localhost:8080/checkcredentials',data,{responseType: 'text'});
+    return this.http.post('http://localhost:8080/employees/checkcredentials',data,{responseType: 'text'});
   }
 }

@@ -19,4 +19,13 @@ export class TaskService {
   getAllTasks():Observable<any>{
     return this.http.get("http://localhost:8080/tasks/viewTasks");
   }
+  getEmployees():Observable<any>{
+    return this.http.get("http://localhost:8080/employees/getallemployees");
+  }
+
+  getTasksofEmployee():Observable<any>{
+    console.log(this.http.get("http://localhost:8080/tasks/121"));
+    return this.http.get("http://localhost:8080/tasks/121");
+  }
+
 }

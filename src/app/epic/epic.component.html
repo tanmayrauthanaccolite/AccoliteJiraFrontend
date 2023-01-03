@@ -1,7 +1,36 @@
-<header class="display-4">Epic View</header>
-<div *ngFor="let x of phase">
-    <!-- for printing different phases -->
-    <h4>{{x}}</h4>
-    <span *ngFor="let epic of epics"> <app-epicjira [epic]="epic" [x]="x"></app-epicjira> </span>
-    
-</div>
+<header>
+    <div class="hamburger" (click)="openNav()">&#9776;</div>
+    <div id="mySidenav" class="sidenav">
+      <a class="closebtn" (click)="closeNav()">&times;</a>
+      <p class="project_details">{{epics[0].projectId}}</p>
+      <a>View Sprint</a>
+      <li ngbDropdown  class="nav-item dropdown">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><mat-icon class="iconPeople">account_box</mat-icon>People</a>
+        <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a ngbDropdownItem class="dropdown-item" href="#">Vasan</a>
+          <a ngbDropdownItem class="dropdown-item" href="#">Stuti</a>
+          <a ngbDropdownItem class="dropdown-item" href="#">Tanmay</a>
+        </span>
+      </li>
+      <a> <mat-icon class="iconAddPeople">add</mat-icon>Add People</a>
+    </div>
+      <nav class="navbar navbar-expand-lg ">
+        <!-- <p  class="display-6"> Dashboard</p> -->
+            <ul class="navbar-nav">
+              <li >
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li >
+                <a class="nav-link" href="#">Project</a>
+              </li>
+              <li >
+                <a class="nav-link" href="#">Create</a>
+              </li>
+            </ul>
+        </nav>
+  </header>
+  <div *ngFor="let x of phase" id="main">
+      <!-- for printing different phases -->
+      <h4>{{x}}</h4>
+      <span *ngFor="let epic of epics"> <app-epicjira [epic]="epic" [x]="x"></app-epicjira> </span>
+  </div>

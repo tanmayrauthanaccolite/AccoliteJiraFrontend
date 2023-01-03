@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
     private authService:AuthService,
     private router: Router
     ){}
+  errormessage;
   formGroup : FormGroup;
   ngOnInit(): void {
     this.formGroup=new FormGroup({
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
         this.authService.login(this.formGroup.value).subscribe((result)=>{
         console.log(result);
         this.router.navigate(['/jira']);
-      })
+      }
+      )
     }
   }
 }

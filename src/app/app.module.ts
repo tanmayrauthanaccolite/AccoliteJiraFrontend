@@ -13,6 +13,8 @@ import { TaskComponent } from './task/task.component';
 import { TaskjiraComponent } from './taskjira/taskjira.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IgxDropDownModule, IgxButtonModule, IgxToggleModule } from 'igniteui-angular';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IgxDropDownModule,
+	  IgxButtonModule,
+	  IgxToggleModule,
+   NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
