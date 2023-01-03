@@ -1,3 +1,4 @@
+import { Project } from "./project";
 export interface Epic {
     epicId: number;
     epicLabel: string;
@@ -5,5 +6,5 @@ export interface Epic {
     assignee: string;
     priority:number;
     status:string;
-    projectId:number;
+    project:Project;
 }

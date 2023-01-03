@@ -8,23 +8,24 @@ import { EpicService } from '../epic.service';
 })
 export class EpicComponent {
   constructor(public service:EpicService){
-
   }
 xy = document.getElementById("")
 phase=["To-do","In Progress","Done"]
-// epics: Epic[] = [
-//   {epicId:1, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Tanmay",priority:1,status:"To-Do" ,projectId:1},
-//   {epicId:2, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Ritiksha",priority:2,status:"Done" ,projectId:1},
-//   {epicId:3, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Tanmay",priority:1,status:"To-Do" ,projectId:1},
-//   {epicId:4, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Keerti",priority:3,status:"Done" ,projectId:1},
-//   {epicId:5, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Stuti",priority:3,status:"To-Do" ,projectId:1},
-//   {epicId:6, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Keerti",priority:1,status:"In Progress" ,projectId:1},
-//   {epicId:7, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Keerti",priority:2,status:"In Progress" ,projectId:1},
-//   {epicId:8, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Tanmay",priority:1,status:"In Progress" ,projectId:1},
-//   {epicId:9, epicLAbel: "Kuch bhi", epicDescription: "I also don't know what to do", assignee:"Tanmay",priority:2,status:"In Progress" ,projectId:1}
-// ];
 epics:Epic[];
 ngOnInit(){
-this.service.epic().subscribe((epicData)=>{this.epics=epicData})
+this.service.epic().subscribe((epicData)=>{this.epics=epicData
+});
+
+} 
+
+// nav function
+ openNav() {
+  document.getElementById("mySidenav").style.width="250px";
+}
+
+closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
 }
 }
+
+
