@@ -22,10 +22,10 @@
                 <a class="nav-link" href="#">Home</a>
               </li>
               <li >
-                <a class="nav-link" href="#">Project</a>
+                <a class="nav-link" (click) = "onCreateProject()">Project</a>
               </li>
               <li >
-                <a class="nav-link" href="#">Create</a>
+                <a class="nav-link" (click) = "onCreateJira()">Create</a>
               </li>
             </ul>
         </nav>
@@ -35,3 +35,6 @@
       <h4>{{x}}</h4>
       <span *ngFor="let epic of epics"> <app-epicjira [epic]="epic" [x]="x"></app-epicjira> </span>
   </div>
+
+<!-- <button mat-raised-button class = "create-button" mat-button color="primary" (click) = "onCreateSprint()" >Create Sprint</button>
+<a class="nav-link" href="#">Create</a> -->

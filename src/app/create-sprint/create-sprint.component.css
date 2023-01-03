@@ -1,0 +1,32 @@
+.form-full-width {
+    width: 75%;
+  }
+  
+  .form-container{
+    width: 90%;
+    padding: 5%;
+  }
+  
+  .dialog-button{
+    float: right;
+    margin : 5px;
+
+  } 
+  
+  .cross{
+    margin-top: 20px;
+    float: right;
+  }
+  
+  .action{
+    margin-top: 20px;
+    margin-right: 10px;
+    float:right;
+  }
+
+  .title{
+    margin-top: 20px;
+    margin-left: 37px;
+  }
+
+  

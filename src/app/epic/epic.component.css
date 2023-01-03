@@ -12,9 +12,24 @@ div{
 p{
   font-weight: 400;
 }
+/* header{
+    text-align: center;
+    padding: 30px;
+    background-color: #E5E4E2;
+    font-family: Serif;
+} */
+
+.create-button{
+    float: right;
+    margin : 5px;
+    /* margin-top : ; */
+    /* margin-bottom: 20px; */
+}
+
 header{
     padding: 30px;
     background-color: #E5E4E2;
+    font-family: Serif;
 }
 nav{
     padding-left: 10px;
@@ -99,5 +114,13 @@ ul{
   position: absolute;
   top:0;
   left:15px;;
-
 }
+/* =======
+ul{
+    position: absolute;
+    left: 220px;
+    font-size: medium;
+    font-size:1.3vw;
+    font-weight: 600;
+>>>>>>> b61aaba4fbc3f5b6446adf7431a9660d4cc031c3
+} */

@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
         this.authService.login(this.formGroup.value).subscribe((result)=>{
         console.log(result);
         this.router.navigate(['/jira']);
+      },
+      (error:any)=>{
+        console.log(error);
       }
       )
     }

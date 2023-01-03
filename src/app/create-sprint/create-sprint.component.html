@@ -1,0 +1,71 @@
+<h2 mat-dialog-title class="title">Create Sprint<span class="cross"><mat-icon (click)="onNoClick()">close</mat-icon></span></h2>
+<div mat-dialog-content>
+<form [formGroup] = "createSprintFormService.createSprintForm" class = "create-sprint-form" (ngSubmit) = "saveSprint()">
+<div class = "form-container">
+    <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Project Name</mat-label>
+          <input formControlName = "projectId" matInput> 
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+    </p>
+
+    <hr>
+    <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Allotted Time(In Weeks)</mat-label>
+          <input formControlName = "allottedTime" matInput> 
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="form-full-width">
+        <mat-label>Description</mat-label>
+        <textarea formControlName = "sprintDescription" matInput></textarea>
+      </mat-form-field>
+    </p>
+
+    <hr>
+
+    <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose start date</mat-label>
+          <input formControlName = "startDate" matInput [matDatepicker]="picker1">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+      </p>
+  <br>
+      <p>
+          <mat-form-field appearance="fill">
+              <mat-label>Choose end date</mat-label>
+              <input formControlName = "endDate" matInput [matDatepicker]="picker2">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error>This field is mandatory</mat-error>
+            </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field class="form-full-width">
+      <mat-label>isActive</mat-label>
+      <input formControlName = "isCurrent" matInput> 
+      <mat-error>This field is mandatory</mat-error>
+    </mat-form-field>
+</p>
+</div>
+<div class = "dialog-buttons-div">
+  <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
+  <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createSprintFormService.createSprintForm.invalid">Create</button>
+  </div>
+</form>
+</div>
+
+<!-- <mat-dialog-actions class = "action"> -->
+  <!-- <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
+  <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createProjectFormService.createProjectForm.invalid">Create</button> -->
+<!-- </mat-dialog-actions> -->
