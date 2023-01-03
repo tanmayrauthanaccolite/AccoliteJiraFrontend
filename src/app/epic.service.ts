@@ -9,7 +9,8 @@ import {Observable} from 'rxjs'
 export class EpicService {
 
   constructor(private http :HttpClient) { }
-  epic():Observable<any>{
-    return this.http.get("http://localhost:8080/project/epic");
+  epic():Observable<Epic[]>{
+    var value= this.http.get<Epic[]>("http://localhost:8080/project/epic");
+    return value;
   }
 }

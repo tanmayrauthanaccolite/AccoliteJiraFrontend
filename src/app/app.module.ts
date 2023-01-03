@@ -9,11 +9,14 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from'@angular/material/icon'
 import {MatCardModule} from '@angular/material/card'
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TaskdetailsComponent } from './taskdetails/taskdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
     EpicComponent,
-    EpicjiraComponent
+    EpicjiraComponent,
+    TaskdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     MatIconModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
