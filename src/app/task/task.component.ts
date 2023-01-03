@@ -26,10 +26,10 @@ openNav() {
 closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
-getJiraOfEmployee()
+getJiraOfEmployee(alias:String)
 {
   console.log("hiiii");
-  this.taskservice.getTasksofEmployee().subscribe((tasksArray)=>{this.tasks=tasksArray;console.log(this.tasks);});
+  this.taskservice.getTasksofEmployee(alias).subscribe((tasksArray)=>{this.tasks=tasksArray;console.log(this.tasks);});
 }
 
 }

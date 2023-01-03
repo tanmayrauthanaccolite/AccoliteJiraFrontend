@@ -6,7 +6,7 @@
       <li ngbDropdown  class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><mat-icon class="iconPeople">account_box</mat-icon>People</a>
         <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <button (click)="getJiraOfEmployee()" *ngFor="let employee of employees" ngbDropdownItem class="dropdown-item">
+          <button *ngFor="let employee of employees" ngbDropdownItem class="dropdown-item" (click)="getJiraOfEmployee(employee.alias)">
             {{employee.alias}}
           </button>
         </span>
@@ -26,6 +26,7 @@
               </li>
             </ul>
         </nav>
+        <p class="sprint">Sprint view</p>
   </header>
 <div *ngFor="let x of phase">
     <h4>{{x}}</h4>

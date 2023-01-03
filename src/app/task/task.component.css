@@ -93,3 +93,7 @@ ul{
   left: 45px;
   top: 250px;
 }
+.sprint{
+    position: absolute;
+    right:20px;
+}

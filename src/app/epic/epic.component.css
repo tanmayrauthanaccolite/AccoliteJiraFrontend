@@ -23,6 +23,7 @@ nav{
 ul{
     position: absolute;
     left: 10px;
+    top:0;
     font-size: medium;
     font-size:1.3vw;
     font-weight: 500;
@@ -71,14 +72,13 @@ ul{
   }
   .hamburger{
     cursor:pointer;
-    padding: 10px;
     font-size: medium;
     font-size: 2vw;
-    height: 10px;
-    width: 10px;
+    height: 1px;
+    width: 1px;
     position:absolute;
-  top:0px;
-    left:4px;
+    top:35px;
+    left:10px;
   }
 .dropdown-menu{
   padding-left: 40px;
@@ -91,5 +91,13 @@ ul{
 .iconAddPeople{
   position: absolute;
   left: 45px;
-  top: 214px;
+  top: 213px;
+}
+.accolitelogo{
+  width: 120px;
+  height: 70px;
+  position: absolute;
+  top:0;
+  left:15px;;
+
 }
