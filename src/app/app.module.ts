@@ -1,25 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { EpicComponent } from './epic/epic.component';
-import { EpicjiraComponent } from './epicjira/epicjira.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
-import { CreateIssueComponent } from './create-issue/create-issue.component'
-import { CreateIssueService } from './create-issue.service';
 import { ReactiveFormsModule } from '@angular/forms';
+
+//component imports
+import { AppComponent } from './app.component';
+import { EpicComponent } from './epic/epic.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
-import { CreateProjectService } from './create-project.service';
+import { CreateSprintComponent } from './create-sprint/create-sprint.component';
+import { CreateJiraComponent } from './create-jira/create-jira.component';
+import { EpicjiraComponent } from './epicjira/epicjira.component';
+
+//service imports
+import { CreateProjectService } from './services/create-project.service';
+import { CreateJiraService } from './services/create-jira.service';
+import { CreateSprintService } from './services/create-sprint.service';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EpicComponent,
     EpicjiraComponent,
-    CreateIssueComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    CreateJiraComponent,
+    CreateSprintComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -27,11 +37,12 @@ import { CreateProjectService } from './create-project.service';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [CreateIssueService,CreateProjectService],
+  providers: [CreateProjectService,CreateJiraService,CreateSprintService],
   bootstrap: [AppComponent],
-  entryComponents : [CreateIssueComponent],
+  entryComponents : [],
   exports:[AppComponent]
 })
 export class AppModule { }

@@ -6,7 +6,7 @@
     <p>
         <mat-form-field class="form-full-width">
           <mat-label>Project Title</mat-label>
-          <input formControlName = "projectTitle" matInput>
+          <input formControlName = "projectLabel" matInput> 
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
     </p>
@@ -19,22 +19,22 @@
     </p>
 
     <p>
-        <mat-form-field appearance="fill">
+        <!-- <mat-form-field appearance="fill">
             <mat-label>Choose start date</mat-label>
             <input formControlName = "projectStartDate" matInput [matDatepicker]="picker">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-    </p>
-
-
+    </p> -->
 
 </div>
+<button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
+<button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createProjectFormService.createProjectForm.invalid">Create</button>
 </form>
 </div>
 
-<mat-dialog-actions class = "action">
-  <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createProjectFormService.createProjectForm.invalid">Create</button>
-  <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
-</mat-dialog-actions>
+<!-- <mat-dialog-actions class = "action"> -->
+  <!-- <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
+  <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createProjectFormService.createProjectForm.invalid">Create</button> -->
+<!-- </mat-dialog-actions> -->

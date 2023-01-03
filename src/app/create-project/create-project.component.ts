@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog,MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { CreateProjectService } from '../create-project.service';
+import { CreateProjectService } from '../services/create-project.service';
 
 @Component({
   selector: 'app-create-project',
@@ -9,11 +9,14 @@ import { CreateProjectService } from '../create-project.service';
 })
 export class CreateProjectComponent {
 
+  data : any;
+  
   constructor(public createProjectFormService : CreateProjectService,
     public dialogRef: MatDialogRef<CreateProjectComponent>,
     public dialog : MatDialog){}
 
   onNoClick(): void {
+    this.createProjectFormService.createProjectForm.reset();
     this.dialogRef.close();
   }
 
@@ -22,7 +25,9 @@ export class CreateProjectComponent {
   }
 
   saveProject(){
-    console.log(this.createProjectFormService.createProjectForm.value)
+    // console.log(this.createProjectFormService.createProjectForm.value)
+    // console.log(this.createProjectFormService.createProjectForm.value)
+    this.createProjectFormService.saveProjectData(this.createProjectFormService.createProjectForm.value).subscribe((result) => {console.log(result)});
   }
 
 }

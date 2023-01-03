@@ -8,14 +8,32 @@ div{
     padding-bottom: 15px;
     padding-top: 10px;
 }
-header{
+/* header{
     text-align: center;
     padding: 30px;
     background-color: #E5E4E2;
     font-family: Serif;
-}
+} */
 
 .create-button{
     float: right;
-    margin-bottom: 20px;
+    margin : 5px;
+    /* margin-top : ; */
+    /* margin-bottom: 20px; */
+}
+
+header{
+    padding: 30px;
+    background-color: #E5E4E2;
+    font-family: Serif;
+}
+nav{
+    padding-left: 10px;
+}
+ul{
+    position: absolute;
+    left: 220px;
+    font-size: medium;
+    font-size:1.3vw;
+    font-weight: 600;
 }

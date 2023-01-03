@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { CreateIssueService } from '../create-issue.service';
 import { Epic } from '../epic';
-import { EpicService } from '../epic.service';
+import { EpicService } from '../services/epic.service';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
-import { CreateIssueComponent } from '../create-issue/create-issue.component';
-import { CreateProjectService } from '../create-project.service';
+import { CreateProjectService } from '../services/create-project.service';
 import { CreateProjectComponent } from '../create-project/create-project.component';
+import { CreateJiraService } from '../services/create-jira.service';
+import { CreateJiraComponent } from '../create-jira/create-jira.component';
+import { CreateSprintService } from '../services/create-sprint.service';
+import { CreateSprintComponent } from '../create-sprint/create-sprint.component';
 
 @Component({
   selector: 'app-epic',
@@ -14,8 +16,9 @@ import { CreateProjectComponent } from '../create-project/create-project.compone
 })
 export class EpicComponent {
   constructor(public service:EpicService,
-    public createIssueFormService : CreateIssueService,
+    public createJiraFormService : CreateJiraService,
     public createProjectFormService : CreateProjectService,
+    public createSprintFormService : CreateSprintService,
     public dialog : MatDialog){
 
   }
@@ -34,12 +37,12 @@ phase=["To-do","In Progress","Done"]
 // ];
 epics:Epic[];
 
-onCreate(){
-  console.log(this.createIssueFormService.createIssueForm)
+onCreateJira(){
+  console.log(this.createJiraFormService.createJiraForm)
   const dialogConfig = new MatDialogConfig();
   dialogConfig.disableClose = true;
   dialogConfig.autoFocus = true;
- this.dialog.open(CreateIssueComponent,{height: '90%',
+ this.dialog.open(CreateJiraComponent,{height: '95%',
  width: '60%',})
 }
 onCreateProject(){
@@ -47,13 +50,21 @@ onCreateProject(){
   const dialogConfig = new MatDialogConfig();
   dialogConfig.disableClose = true;
   dialogConfig.autoFocus = true;
- this.dialog.open(CreateProjectComponent,{height: '85%',
- width: '40%',})
+ this.dialog.open(CreateProjectComponent,{height: '70%',
+ width: '40%'});
+}
+
+onCreateSprint(){
+  console.log(this.createSprintFormService.createSprintForm)
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.disableClose = true;
+  dialogConfig.autoFocus = true;
+ this.dialog.open(CreateSprintComponent,{height: '95%',
+ width: '60%',})
 }
 
 ngOnInit(){
-this.service.epic().subscribe((epicData)=>{this.epics=epicData})
+this.service.epic().subscribe((epicData)=>{console.log(epicData)})
 }
-
 
 }
