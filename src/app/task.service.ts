@@ -8,7 +8,7 @@ import { Observable, Subject } from 'rxjs';
 export class TaskService {
   url="http://localhost:8080/tasks/view/";
   epicObservable=new Subject<Epic>();
-
+  projectid:any;
   constructor(private http :HttpClient) { }
   displayTasks()
   {

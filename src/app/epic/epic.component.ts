@@ -12,10 +12,11 @@ import { ProjectInfoComponent } from './project-info/project-info.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { AddPeopleComponent } from './add-people/add-people.component';
 import { AuthService } from '../auth.service';
+import { TaskService } from '../task.service';
 import { Employee } from '../employee';
 import { ProjectService } from '../services/project.service';
 import { Project } from '../project';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 
 @Component({
@@ -33,7 +34,10 @@ export class EpicComponent {
     public authService:AuthService,
     private epicService:EpicService,
     private projectService:ProjectService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private _router: Router,
+    private taskservice:TaskService
+
     ){
   }
 xy = document.getElementById("")
@@ -41,8 +45,8 @@ phase=["To-Do","In Progress","Done"]
 epics:any;
 employee:any;
 projects:any;
-
-
+curProject:any;
+employees:any;
 
 onCreateJira(){
   console.log(this.createJiraFormService.createJiraForm)
@@ -50,7 +54,7 @@ onCreateJira(){
   dialogConfig.disableClose = true;
   dialogConfig.autoFocus = true;
   setTimeout(()=>{
-    this.epicService.getProject(this.projects[0]);
+    this.epicService.getProject(this.curProject);
     this.epicService.getAllEpicsOfProject(this.epics);
     this.epicService.getLoggedInUser(this.employee);
   }, 1000);
@@ -88,8 +92,9 @@ ngOnInit(){
         this.projects=data;
         //console.log(data);
         console.log(this.projects);
-        console.log(this.projects[0].projectId);
-        this.projectService.getEpicsOfProject(this.projects[0].projectId).subscribe((epicData)=>{
+        this.curProject=this.projects[0];
+        console.log(this.curProject.projectId);
+        this.projectService.getEpicsOfProject(this.curProject.projectId).subscribe((epicData)=>{
         this.epics=epicData;
         console.log(this.epics);
       });
@@ -106,6 +111,12 @@ ngOnInit(){
     });
   });
 }
+
+getEmployeesByProject(projectid:number){
+  this.projectService.getEmployeesByProject(projectid).subscribe((data)=>this.employees=data);
+  this.ngOnInit;
+}
+
 // nav function
  openNav() {
   document.getElementById("mySidenav").style.width="250px";
@@ -135,8 +146,26 @@ addPeople(){
   this.dialog.open(AddPeopleComponent,{height: '60%',
   width: '30%',
   position: {right:'30%', top: '10%'},
-  data : this.projects[0].projectId
+  data : this.curProject.projectId
   })
+}
+
+callProject(project:Project){
+  this.projectService.getEpicsOfProject(project.projectid).subscribe((epicData)=>{
+    this.epics=epicData;
+    this.curProject=project;
+   this.ngOnInit;
+  });
+}
+ViewSprint(projectid:number){
+  this.taskservice.projectid=projectid;
+  this._router.navigate(['/sprint']);
+}
+EmpAllEpics(alias:string){
+  this.service.getAllEpicOfEmp(alias).subscribe((data)=>{
+    this.epics=data
+  })
+  this.ngOnInit;
 }
 
 }

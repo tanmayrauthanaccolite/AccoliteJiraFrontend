@@ -34,4 +34,7 @@ export class EpicService {
     this.employeeObservable.next(employee);
     //console.log(employee);
   }
+  getAllEpicOfEmp(alias:string){
+    return this.http.get("http://localhost:8080/jira/getAllEpicsOfEmployee/"+alias)
+  }
 }
