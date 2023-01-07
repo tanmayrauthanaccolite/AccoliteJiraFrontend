@@ -3,17 +3,18 @@
 <form [formGroup] = "createJiraFormService.createJiraForm" class = "create-jira-form" (ngSubmit) = "saveJira()">
 <div class = "form-container">
 
-    <p>
+  <mat-label>{{project.projectLabel}}</mat-label>
+    <!-- <p>
         <mat-form-field class="form-full-width">
           <mat-label>Project Name</mat-label>
-          <input formControlName = "projectName" matInput> 
+          <input type="text" value="hello" formControlName = "projectName" matInput>
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
-    </p>
+    </p> -->
 
     <hr>
 
-    <p>
+    <!-- <p>
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
           <mat-select formControlName = "jiraStatus">
@@ -23,7 +24,7 @@
           </mat-select>
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
-      </p>
+      </p> -->
 
       <p>
         <mat-form-field appearance="fill">
@@ -55,21 +56,21 @@
     </p>
 
     <hr>
-
-    <p>
+    <p><mat-label>Assignee {{employee.alias}}</mat-label></p>
+    <hr>
+    <!-- <p>
         <mat-form-field appearance="fill">
           <mat-label>Assignee</mat-label>
           <mat-select formControlName = "jiraAssignee">
             <mat-option *ngFor="let employee of assignEmployee" [value]="employee">
               {{employee}}
             </mat-option>
-            <!-- <mat-option value="option1">Emp1</mat-option>
-            <mat-option value="option2">Emp2</mat-option> -->
+            <mat-option value="option1">Emp1</mat-option>
+            <mat-option value="option2">Emp2</mat-option>
           </mat-select>
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
-      </p>
-    
+      </p> -->
     <p>
         <mat-form-field class="form-full-width">
           <mat-label>Reporter</mat-label>
@@ -81,9 +82,14 @@
     <p>
         <mat-form-field class="form-full-width">
           <mat-label>Linked Issue</mat-label>
-          <input formControlName = "jiraLinkedIssue" matInput> 
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
+          <mat-select formControlName = "jiraLinkedIssue">
+          <mat-option *ngFor="let epic of epics " [value]="epic">
+            {{epic.jiraTitle}}
+          </mat-option>
+          <mat-option>None</mat-option>
+        </mat-select>
+      <mat-error>This field is mandatory</mat-error>
+    </mat-form-field>
     </p>
 
  
@@ -91,7 +97,7 @@
 </div>
 <div class = "dialog-buttons-div">
 <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
-<button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createJiraFormService.createJiraForm.invalid" (click) = "onNoClick()">Create</button>
+<button mat-button color= "primary" class = "dialog-button" type = "submit">Create</button>
 </div>
 </form>
 </div>

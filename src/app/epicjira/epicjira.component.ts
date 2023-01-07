@@ -8,7 +8,7 @@ import { TaskService } from '../task.service';
   styleUrls: ['./epicjira.component.css']
 })
 export class EpicjiraComponent {
-@Input() epic :Epic;
+@Input() epic :any;
 @Input() x : any;
 
 constructor(
@@ -29,5 +29,9 @@ displayTasks()
   console.log("hi");
   this.taskService.displayTasks();
   this._router.navigate(['/sprint']);
+}
+
+editJira(){
+  console.log("Hi");
 }
 }

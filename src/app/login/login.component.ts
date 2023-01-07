@@ -27,11 +27,15 @@ export class LoginComponent implements OnInit {
     {
         console.log(this.formGroup.value);
         this.authService.login(this.formGroup.value).subscribe((result)=>{
+        setTimeout(()=>{
+            this.authService.passEmployee(result);
+        }, 1000);
         console.log(result);
-        this.router.navigate(['/jira']);
+        this.router.navigate(['/jira',result.alias]);
       },
-      (error:any)=>{
-        console.log(error);
+      (error)=>{
+        this.errormessage=error.error.message;
+        console.log(this.errormessage);
       }
       )
     }

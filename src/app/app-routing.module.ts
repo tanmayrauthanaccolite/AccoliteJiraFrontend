@@ -6,8 +6,8 @@ import { TaskComponent } from './task/task.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  { path: 'sprint', component: TaskComponent },
-  {path: 'jira', component:EpicComponent},
+  {path: 'sprint', component: TaskComponent },
+  {path: 'jira/:alias' ,component:EpicComponent},
   {path:'login',component:LoginComponent}
 ];
 

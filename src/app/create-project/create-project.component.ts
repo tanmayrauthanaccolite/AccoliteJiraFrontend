@@ -28,6 +28,7 @@ export class CreateProjectComponent {
     // console.log(this.createProjectFormService.createProjectForm.value)
     // console.log(this.createProjectFormService.createProjectForm.value)
     this.createProjectFormService.saveProjectData(this.createProjectFormService.createProjectForm.value).subscribe((result) => {console.log(result)});
+    this.onNoClick();
   }
 
 }

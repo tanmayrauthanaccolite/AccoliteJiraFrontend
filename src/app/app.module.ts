@@ -24,6 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateProjectService } from './services/create-project.service';
 import { CreateJiraService } from './services/create-jira.service';
 import { CreateSprintService } from './services/create-sprint.service';
+import { ProjectInfoComponent } from './epic/project-info/project-info.component';
+import { UserInfoComponent } from './epic/user-info/user-info.component';
+import { AddPeopleComponent } from './epic/add-people/add-people.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,10 @@ import { CreateSprintService } from './services/create-sprint.service';
     LoginComponent,
     CreateProjectComponent,
     CreateJiraComponent,
-    CreateSprintComponent
+    CreateSprintComponent,
+    ProjectInfoComponent,
+    UserInfoComponent,
+    AddPeopleComponent
   ],
   imports: [
     BrowserModule,

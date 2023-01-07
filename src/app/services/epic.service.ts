@@ -1,18 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Epic } from '../epic';
-import {Observable} from 'rxjs'
+import {Observable, Subject} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class EpicService {
+  // urls:String;
+  // project=new Subject<Employee>();
+  // constructor(private http :HttpClient) { }
+  // epic(id:number):Observable<any>{
+  //   this.urls="http://localhost:8080/epics/project/epic/"+id;
 
+  //   return this.http.get("this.urls");
+  // }
+  projectObservable=new Subject<any>();
+  epicsObservable=new Subject<any>();
+  employeeObservable=new Subject<any>();
   constructor(private http :HttpClient) { }
-  epic():Observable<any>{
-    return this.http.get("http://localhost:8080/epics/project/epic");
-// =======
-//     return this.http.get("http://localhost:8090/projects/viewProjectbyId/21");
-// >>>>>>> b61aaba4fbc3f5b6446adf7431a9660d4cc031c3:src/app/services/epic.service.ts
+  getProject(project:any)
+  {
+    this.projectObservable.next(project);
+    //console.log(project);
+  }
+  getAllEpicsOfProject(epic:any)
+  {
+    this.epicsObservable.next(epic);
+    //console.log(epic);
+  }
+  getLoggedInUser(employee:any)
+  {
+    this.employeeObservable.next(employee);
+    //console.log(employee);
   }
 }
