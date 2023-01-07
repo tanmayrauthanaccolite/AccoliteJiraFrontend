@@ -94,6 +94,7 @@ ngOnInit(){
         console.log(this.projects);
         this.curProject=this.projects[0];
         console.log(this.curProject.projectId);
+        this.projectService.getEmployeesByProject(this.curProject.projectId).subscribe((data)=>this.employees=data);
         this.projectService.getEpicsOfProject(this.curProject.projectId).subscribe((epicData)=>{
         this.epics=epicData;
         console.log(this.epics);
