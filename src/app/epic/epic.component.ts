@@ -8,6 +8,9 @@ import { CreateJiraService } from '../services/create-jira.service';
 import { CreateJiraComponent } from '../create-jira/create-jira.component';
 import { CreateSprintService } from '../services/create-sprint.service';
 import { CreateSprintComponent } from '../create-sprint/create-sprint.component';
+import { ProjectInfoComponent } from './project-info/project-info.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { AddPeopleComponent } from './add-people/add-people.component';
 import { AuthService } from '../auth.service';
 import { Employee } from '../employee';
 import { ProjectService } from '../services/project.service';
@@ -110,6 +113,30 @@ ngOnInit(){
 closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
-onProjectInfoClick(){}
-onUserProfileClick(){}
+getProjectInfo(){
+  const dialogConfig = new MatDialogConfig();
+  this.dialog.open(ProjectInfoComponent,{height: '45%',
+  width: '25%',
+  position: {right:'5%', top: '4%'},
+  data : this.projects[0]
+});
+}
+
+getUserInfo(){
+  const dialogConfig = new MatDialogConfig();
+  this.dialog.open(UserInfoComponent,{height: '45%',
+  width: '25%',
+  position: {right:'4%', top: '4%'},
+  data : this.employee });
+
+}
+
+addPeople(){
+  this.dialog.open(AddPeopleComponent,{height: '60%',
+  width: '30%',
+  position: {right:'30%', top: '10%'},
+  data : this.projects[0].projectId
+  })
+}
+
 }
