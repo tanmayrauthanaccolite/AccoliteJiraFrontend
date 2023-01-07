@@ -1,7 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Epic } from '../epic';
-import { TaskService } from '../task.service';
+import { TaskService } from '../services/task.service';
 @Component({
   selector: 'app-epicjira',
   templateUrl: './epicjira.component.html',

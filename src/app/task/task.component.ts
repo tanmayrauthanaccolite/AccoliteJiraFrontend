@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Epic } from '../epic';
 import { Task } from '../task';
-import { TaskService } from '../task.service';
+import { TaskService } from '../services/task.service';
 import {Employee} from '../employee';
 import { SlicePipe } from '@angular/common';
 

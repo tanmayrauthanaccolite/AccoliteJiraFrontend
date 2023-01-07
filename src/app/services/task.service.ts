@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Epic } from './epic';
+import { Epic } from '../epic';
 import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'

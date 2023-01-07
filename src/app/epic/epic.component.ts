@@ -11,7 +11,7 @@ import { CreateSprintComponent } from '../create-sprint/create-sprint.component'
 import { ProjectInfoComponent } from './project-info/project-info.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { AddPeopleComponent } from './add-people/add-people.component';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 import { Employee } from '../employee';
 import { ProjectService } from '../services/project.service';
 import { Project } from '../project';
@@ -54,8 +54,8 @@ onCreateJira(){
     this.epicService.getAllEpicsOfProject(this.epics);
     this.epicService.getLoggedInUser(this.employee);
   }, 1000);
-  this.dialog.open(CreateJiraComponent,{height: '95%',
- width: '60%',})
+  this.dialog.open(CreateJiraComponent,{height: '90%',
+ width: '40%'})
 }
 onCreateProject(){
   console.log(this.createProjectFormService.createProjectForm)

@@ -7,14 +7,16 @@
   display: inline-block;
   text-align: center;
   /* margin :2px 5px auto 5px; */
-  margin-top: 2px;
+  /* margin-top: 50px; */
   margin-left: 21px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-right: 5px;
   padding-bottom: 15px;
   padding-top: 10px;
   border-radius: 1%;
   overflow: auto;
+  padding-top: 0px  ;
+  
 }
 .phase-container::-webkit-scrollbar { 
 display: none;  
@@ -58,6 +60,7 @@ ul{
 }
 /* navbar css  */
 .sidenav {
+  border-radius: 3%;
   height: 100%;
   width: 0;
   position: fixed;
@@ -65,7 +68,12 @@ ul{
   margin-top: 0;
   top: 0;
   left: 0;
-  background-color:#f8f9fa;
+  background-color: #c4c7ca;
+  border-color: #fff;
+  border-width:2px;
+border-style:solid;
+  /* background-color: #9EB9B7; */
+  /* background-color:#A6ABBD; */
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
@@ -148,8 +156,8 @@ ul{
 } 
 .phase-heading{
 z-index: 1;
-margin-top: 10px;
-margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 15 px;
 font-size: large;
 font-weight: normal;
 /* position: sticky; */
@@ -230,4 +238,13 @@ list-style: none;
 
 .dropdown-toggle::after {
 content: none;
+}
+
+.dropdown-menu{
+--bs-dropdown-link-active-bg: #fff;
+--bs-dropdown-link-hover-bg: unset
+}
+
+.sidenav-content{
+  color: #F5F9FF;
 }
