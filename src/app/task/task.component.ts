@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskService } from '../task.service';
+import { TaskService } from '../services/task.service';
 import {Employee} from '../employee';
 import { Jira } from '../jira';
 import { Project } from '../project';

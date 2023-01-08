@@ -30,8 +30,9 @@
 }
 
 .dialog-image{
-  height: 150px;
-  width : 170px;
+  height: 160px;
+  width : 220px;
+  padding-bottom: 5px;
 }
 
 h2{

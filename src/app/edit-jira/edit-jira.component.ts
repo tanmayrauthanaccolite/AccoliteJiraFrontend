@@ -70,6 +70,7 @@ export class EditJiraComponent {
         jiraepic:this.editJiraService.editJiraForm.value.jiraLinkedIssue,
         employee:this.employee,
         jiraprojects:this.project
+        //jiraPriority:this.editJiraService.editJiraForm.value.
       }
       // this.jira.jiraTitle=this.createJiraFormService.createJiraForm.value.jiraTitle;
       // this.jira.jiraDescription=this.createJiraFormService.createJiraForm.value.jiraDescription;

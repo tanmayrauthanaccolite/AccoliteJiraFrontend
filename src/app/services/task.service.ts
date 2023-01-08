@@ -1,8 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { EventEmitter, Injectable, Input } from '@angular/core';
-import { Epic } from './epic';
+//import { Epic } from './epic';
 import { Observable, Subject } from 'rxjs';
-import { Jira } from './jira';
 @Injectable({
   providedIn: 'root'
 })

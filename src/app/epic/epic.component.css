@@ -1,27 +1,31 @@
-.phase-container{
+.phase-container {
   /* background-color: #f4f4ed; */
   background-color: #c4c7ca;
   /* #E5E4E2 */
-  width:31%;
+  width: 31%;
   height: 78%;
   display: inline-block;
   text-align: center;
   /* margin :2px 5px auto 5px; */
-  margin-top: 2px;
+  /* margin-top: 50px; */
   margin-left: 21px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-right: 5px;
   padding-bottom: 15px;
   padding-top: 10px;
   border-radius: 1%;
   overflow: auto;
+  padding-top: 0px;
+  background-image: url("/assets/img/to-do-bg2.png");
+  /* background-size: 500px 300px;   */
+  background-position: 90px 90px;
 }
-.phase-container::-webkit-scrollbar { 
-display: none;  
+.phase-container::-webkit-scrollbar {
+  display: none;
 }
 
-p{
-font-weight: 400;
+p {
+  font-weight: 400;
 }
 /* header{
   text-align: center;
@@ -30,46 +34,48 @@ font-weight: 400;
   font-family: Serif;
 } */
 
-.create-button{
+.create-button {
   float: right;
-  margin : 5px;
+  margin: 5px;
   /* margin-top : ; */
   /* margin-bottom: 20px; */
 }
 
-header{
-padding: 14px;
-/* background-color: #8187dc; */
-background-color: #1565c0;
-font-family: Serif;
+header {
+  padding: 14px;
+  /* background-color: #8187dc; */
+  background-color: #1565c0;
+  font-family: Serif;
 }
-nav{
+nav {
   padding-left: 10px;
   left: 25px;
 }
-ul{
+ul {
   position: absolute;
-  cursor:pointer;
+  cursor: pointer;
   left: 10px;
-  top:0;
+  top: 0;
   font-size: medium;
-  font-size:1.3vw;
+  font-size: 1.3vw;
   font-weight: 500;
 }
 /* navbar css  */
 .sidenav {
-  height: 100%;
+  height: 90%;
   width: 0;
   position: fixed;
   z-index: 2;
   margin-top: 0;
-  top: 0;
+  top: 10%;
   left: 0;
   background-color:#f8f9fa;
+  /* background-color: #1565c0; */
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
   text-align: center;
+  border-radius: 3%;
 }
 .sidenav a {
   padding: 16px 8px 8px 8px;
@@ -79,17 +85,17 @@ ul{
   display: block;
   transition: 0.3s;
 }
-.project_details{
+.project_details {
   color: black;
   display: block;
   transition: 0.3s;
   font-weight: 500;
 }
 .sidenav a:hover {
-  color: #F1F1F1;
+  color: #1565c0;
 }
 .sidenav .closebtn {
-  cursor:pointer;
+  cursor: pointer;
   position: absolute;
   top: 0;
   right: 25px;
@@ -97,137 +103,169 @@ ul{
   margin-left: 50px;
 }
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-.hamburger{
-  cursor:pointer;
+.hamburger {
+  cursor: pointer;
   font-size: medium;
   font-size: 1.5vw;
   /* height: 1px; */
   width: 0px;
-  position:absolute;
+  position: absolute;
   margin-top: 20px;
   top: 2px;
-  left:15px;
+  left: 15px;
 
   /* margin-bottom: 40px; */
-  color: #E5E4E2;
+  color: #e5e4e2;
 }
-.dropdown-menu{
-padding-left: 40px;
+.dropdown-menu {
+  padding-left: 40px;
 }
-.iconPeople{
-position: absolute;
-top:15px;
-left: 60px;;
+.iconPeople {
+  position: absolute;
+  top: 15px;
+  left: 60px;
 }
-.iconAddPeople{
-position: absolute;
-left: 45px;
-top: 180px;
+.iconAddPeople {
+  position: absolute;
+  left: 45px;
+  top: 180px;
 }
-.accolitelogo{
-width: 130px;
-height: 15px;
-position: absolute;
-top:0;
-left:30px;
-margin-top: 25px;
-margin-left: 20px;
-/* margin-right: 0px; */
+.accolitelogo {
+  width: 130px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  margin-top: 25px;
+  margin-left: 20px;
+  /* margin-right: 0px; */
 }
 
-ul{
+ul {
   position: absolute;
   left: 170px;
-  top:-20px;
+  top: -20px;
   font-size: medium;
-  font-size:1.3vw;
+  font-size: 1.3vw;
   font-weight: 600;
-} 
-.phase-heading{
-z-index: 1;
-margin-top: 10px;
-margin-bottom: 20px;
-font-size: large;
-font-weight: normal;
-/* position: sticky; */
+}
+.phase-heading {
+  z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 15 px;
+  font-size: large;
+  font-weight: normal;
+  /* position: sticky; */ 
 }
 
-.separator{
-margin-left: 5%;
-width: 90%;
-padding-bottom: 5px;  
+.separator {
+  margin-left: 5%;
+  width: 90%;
+  padding-bottom: 5px;
 }
 
-.separator-div{
-text-align: center;
+.separator-div {
+  text-align: center;
 }
 
-.navbar-ele{
-font-family: "Montserrat";
-font-weight:100;
-margin-left: 0px;
-/* margin-top: 1px; */
-
+.navbar-ele {
+  font-family: "Montserrat";
+  font-weight: 100;
+  margin-left: 0px;
+  /* margin-top: 1px; */
 }
 
-.navbar-icon1{
-margin-top: 5px;
-margin-left: 900px;
-color: #F1F1F1;
-height: 8px;
-width: 8px;
-font-size: larger;
+.navbar-icon1 {
+  margin-top: 5px;
+  margin-left: 935px;
+  color: #f1f1f1;
+  height: 8px;
+  width: 8px;
+  font-size: larger;
 }
 
-.navbar-icon2{
-margin-top: 5px;
-margin-left: 30px;
-color: #F1F1F1;
-font-size: larger;
+.navbar-icon2 {
+  margin-top: 5px;
+  margin-left: 30px;
+  color: #f1f1f1;
+  font-size: larger;
 }
 
 .nav-link {
-color: #f8f9fa;
-} 
-
-.navbar-nav .show>.nav-link {
-color: #f8f9fa;
+  color: #f8f9fa;
 }
 
-.project-name{
-margin-top: 12px;
-margin-left: 21px;
-margin-bottom: 5px;
+.navbar-nav .show > .nav-link {
+  color: #f8f9fa;
 }
 
-h3{
-font-family: "Montserrat";
-font-weight: bold;
+.project-name {
+  margin-top: 12px;
+  margin-left: 21px;
+  margin-bottom: 5px;
 }
 
-.sticky-element{
-top: 0;
-position: sticky;
-z-index: 1;
-background-color: #c4c7ca;
+h3 {
+  font-family: "Montserrat";
+  font-weight: bold;
 }
 
-.epic-container{
-z-index: 1;
-overflow: auto;
-padding-bottom: 10px;
+.sticky-element {
+  top: 0;
+  position: sticky;
+  z-index: 1;
+  background-color: #c4c7ca;
 }
 
-.epic-container::-webkit-scrollbar { 
-display: none;  /* Safari and Chrome */
+.epic-container {
+  z-index: 1;
+  overflow: auto;
+  padding-bottom: 10px;
 }
-li{
-list-style: none;
+
+.epic-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+li {
+  list-style: none;
 }
 
 .dropdown-toggle::after {
-content: none;
+  content: none;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #fff;
+  --bs-dropdown-link-hover-bg: unset;
+}
+
+.sidenav-content {
+  color: #fff;
+  cursor: pointer
+}
+
+.dropdown-menu {
+  transform: translate(40px, 46px) !important;
+}
+
+.sidenav-image{
+  width: 250px;
+  margin-top: 180px;
+}
+
+.dropdown-menu-create{
+  transform: translate(0px, 0px);
+}
+
+.icon-visibility{
+  position: absolute;
+  top: 95px;
+  left: 45px;
 }

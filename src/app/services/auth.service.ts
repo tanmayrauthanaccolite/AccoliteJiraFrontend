@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, Subject } from 'rxjs';
-import { Employee } from './employee';
+import { Employee } from '../employee';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AuthService {
   login(data):Observable<any>
   {
     console.log(data);
-    return this.http.post('http://localhost:8080/employees/check',data);
+    return this.http.post('http://localhost:8080/employees/checkEmployee',data);
   }
   passEmployee(employee:Employee)
   {

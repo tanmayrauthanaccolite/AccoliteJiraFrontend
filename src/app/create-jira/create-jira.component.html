@@ -1,9 +1,13 @@
 <h2 mat-dialog-title class="title">Create Jira<span class="cross"><mat-icon (click)="onNoClick()">close</mat-icon></span></h2>
-<div mat-dialog-content>
+<div mat-dialog-content class = "container">
 <form [formGroup] = "createJiraFormService.createJiraForm" class = "create-jira-form" (ngSubmit) = "saveJira()">
 <div class = "form-container">
 
-  <mat-label>{{project.projectLabel}}</mat-label>
+  <img src="/assets/img/create-jira.png" alt="" class = "create-jira">
+  <br>
+  <br>
+<p>
+  <mat-label class = "label">{{project.projectLabel}}</mat-label>
     <!-- <p>
         <mat-form-field class="form-full-width">
           <mat-label>Project Name</mat-label>
@@ -11,9 +15,9 @@
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
     </p> -->
-
-    <hr>
-
+  </p>
+    <hr class = "rule">
+    
     <!-- <p>
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
@@ -37,7 +41,6 @@
         </mat-form-field>
       </p>
     
-      <hr>
 
     <p>
         <mat-form-field class="form-full-width">
@@ -47,6 +50,7 @@
         </mat-form-field>
     </p>
     
+    
 
     <p>
       <mat-form-field class="form-full-width">
@@ -55,9 +59,17 @@
       </mat-form-field>
     </p>
 
-    <hr>
-    <p><mat-label>Assignee {{employee.alias}}</mat-label></p>
-    <hr>
+  <p>
+    <label id="example-radio-group-label">Select Priority</label>
+    <mat-radio-group aria-label="Priority" formControlName = "jiraPriority">
+      <mat-radio-button value="1">1</mat-radio-button>
+      <mat-radio-button value="2">2</mat-radio-button>
+      <mat-radio-button value="3">3</mat-radio-button>
+    </mat-radio-group>
+  </p>
+
+    <p><mat-label class = "assignee">Assignee {{employee.alias}}</mat-label></p>
+    <hr class="rule">
     <!-- <p>
         <mat-form-field appearance="fill">
           <mat-label>Assignee</mat-label>

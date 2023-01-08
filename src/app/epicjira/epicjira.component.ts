@@ -1,10 +1,11 @@
 import { Component,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Epic } from '../epic';
-import { TaskService } from '../task.service';
+import { TaskService } from '../services/task.service';
 import { EditJiraService } from '../services/edit-jira.service';
 import { EditJiraComponent } from '../edit-jira/edit-jira.component';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-epicjira',
   templateUrl: './epicjira.component.html',

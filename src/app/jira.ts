@@ -14,4 +14,5 @@ export interface Jira {
     "jiraepic": Jira,
     "jiraprojects": Project,
     "employee":Employee
+    //"jiraPriority": number
 }

@@ -4,6 +4,7 @@
   <div id="mySidenav" class="sidenav">
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <!-- <p class="project_details">{{epics[0].projectId}}</p> -->
+    
     <li ngbDropdown  class="nav-item dropdown">
       <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
       aria-expanded="false">Project</a>
@@ -12,7 +13,7 @@
           {{SelectedProject.projectLabel}}:{{SelectedProject.projectDescription}}</button>
       </span>
     </li>
-    <a (click)="ViewSprint(curProject.projectId)">View Sprint</a>
+    <a (click)="ViewSprint(curProject.projectId)"><mat-icon class="icon-visibility">visibility</mat-icon>View Sprint</a>
 
     <li ngbDropdown  class="nav-item dropdown">
       <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
@@ -24,6 +25,8 @@
     </li>
 
     <a> <mat-icon class="iconAddPeople" (click) = "addPeople()">add</mat-icon>Add People</a>
+    <img src="/assets/img/side-nav.png" alt="" class = "sidenav-image">
+
   </div>
   <nav class="navbar navbar-expand-lg">
     <!-- <p  class="display-6"> Dashboard</p> -->
@@ -46,7 +49,7 @@
           >Create</a>
         <span
           ngbDropdownMenu
-          class="dropdown-menu"
+          class="dropdown-menu-create"
           aria-labelledby="navbarDropdown">
           <a ngbDropdownItem class="dropdown-item" (click)="onCreateProject()">Project</a>
           <a ngbDropdownItem class="dropdown-item" (click)="onCreateJira()">Jira</a>
@@ -77,6 +80,7 @@
   <span *ngFor="let epic of epics">
     <app-epicjira [epic]="epic" [x]="x" [project]="curProject" [employee]="employee"></app-epicjira>
   </span>
+  <!-- <img src="/assets/img/to-do-bg.png" alt="" class = "dialog-image"> -->
 </div>
 
 </div>

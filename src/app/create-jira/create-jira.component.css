@@ -16,6 +16,7 @@
   .cross{
     margin-top: 20px;
     float: right;
+    margin-right: 3%;
   }
   
   .action{
@@ -26,9 +27,35 @@
 
   .title{
     margin-top: 20px;
-    margin-left: 37px;
+    margin-left: 35px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  .create-jira{
+    height: 80%;
+    width: 75%;
+    left: 20%;
+    top: 0%;
+  }
+
+  .rule{
+    width : 50%
+  }
+
+  .label{
+    font-weight: bolder;
+  }
+
+  .assignee{
+    font-weight: bolder;
   }
 
   .dialog-buttons-div{
-    
+    position: absolute;
+    top: 88%;
+    left: 65%;
+  }
+.container::-webkit-scrollbar { 
+  display: none;  
   }
