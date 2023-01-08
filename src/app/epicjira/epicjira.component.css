@@ -1,9 +1,10 @@
 .prio{
-    width: 3px;
-    height:80px;
+    width: 4px;
+    height:100px;
     position: absolute;
-    top:9px;
+    top:0px;
     left:10px;
+    padding-right: 2px;
 }
 .circle{
     width: 40px;
@@ -19,7 +20,7 @@
     font-family: sans-serif;
     position: absolute;
     top:20px;
-    margin-right: 5%;
+    margin-right: 7%;
     right:10px;
 }
 mat-icon{
@@ -81,7 +82,7 @@ mat-grid-tile{
 }
 .desc{
     position: absolute;
-    top: 58px;
+    top: 65px;
     left:10px;
     font-weight: 200;
     top: 60px;
@@ -92,10 +93,10 @@ mat-grid-tile{
 }
 .assignee{
     position: absolute;
-    top:70px;
+    top:65px;
     right: 10px;;
     right: 10px;
-    margin-right: 5%;
+    margin-right: 7%;
     margin-bottom: 10%;
 }
 
@@ -139,16 +140,17 @@ li{
     position: absolute;
     top:2px;
     margin-left: 2px;
-    position: absolute;
     font-size: large;
 }
 
 .dropdown-item{
     cursor: pointer;
-    padding-left: 0px;
-    padding-right: 0px;
     padding-top: 2px;
     padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: lighter;
+    font-size: small;
 }
 
 .dropdown-menu{
@@ -156,8 +158,21 @@ li{
 }
 
 .dropdown-menu-vert{
-    position: absolute;
+    /* position: absolute; */
     inset: auto auto 0px 0px;
     margin: 0px;
     transform: translate(0px, -2px);
+    
 }
+
+.dropdown{
+    position: absolute;
+    /* margin-left: 110px; */
+    top: 0px;
+    /* left: 10px; */
+    margin-left: 160px;
+    margin-top: 9px;
+}
+
+
+
