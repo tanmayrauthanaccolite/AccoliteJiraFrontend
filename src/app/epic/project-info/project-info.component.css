@@ -36,12 +36,27 @@
 
 .project-id{
   font-weight: bold;
+  font-size: large;
 }
 
-project-label{
+.project-label{
   font-weight: bolder;
 }
 
-project-description{
+.project-description{
   font-weight: light;
+}
+
+.red{
+  color: red;
+}
+
+.green{
+  color: green;
+}
+
+.active-button{
+  /* margin-top: 15px; */
+  position: absolute;
+  margin-left: 5px;
 }

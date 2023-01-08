@@ -21,6 +21,7 @@ export class CreateJiraService {
     jiraType : new FormControl('',Validators.required),
     jiraLinkedIssue : new FormControl(),
     // jiraProjects : new FormControl('',Validators.required)
+    jiraPriority : new FormControl('',Validators.required)
   });
 
   saveJiraData(data : any){

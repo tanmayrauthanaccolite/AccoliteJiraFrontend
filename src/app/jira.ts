@@ -13,5 +13,6 @@ export interface Jira {
     //"jiraSprint": String,
     "jiraepic": Jira,
     "jiraprojects": Project,
-    "employee":Employee
+    "employee":Employee,
+    "jiraPriority": number
 }

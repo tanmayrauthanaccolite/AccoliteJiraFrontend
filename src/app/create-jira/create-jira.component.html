@@ -50,6 +50,7 @@
         </mat-form-field>
     </p>
     
+    
 
     <p>
       <mat-form-field class="form-full-width">
@@ -57,6 +58,15 @@
         <textarea formControlName = "jiraDescription" matInput></textarea>
       </mat-form-field>
     </p>
+
+  <p>
+    <label id="example-radio-group-label">Select Priority</label>
+    <mat-radio-group aria-label="Priority" formControlName = "jiraPriority">
+      <mat-radio-button value="1">1</mat-radio-button>
+      <mat-radio-button value="2">2</mat-radio-button>
+      <mat-radio-button value="3">3</mat-radio-button>
+    </mat-radio-group>
+  </p>
 
     <p><mat-label class = "assignee">Assignee {{employee.alias}}</mat-label></p>
     <hr class="rule">

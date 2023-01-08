@@ -20,7 +20,8 @@
         <a ngbDropdownItem class="dropdown-item" href="#">Tanmay</a>
       </span>
     </li>
-    <a class = "sidenav-content"> <mat-icon class="iconAddPeople" (click) = "addPeople()">add</mat-icon>Add People</a>
+    <a class = "sidenav-content" (click) = "addPeople()"> <mat-icon class="iconAddPeople">add</mat-icon>Add People</a>
+    <img src="/assets/img/side-nav.png" alt="" class = "sidenav-image">
   </div>
   <nav class="navbar navbar-expand-lg">
     <!-- <p  class="display-6"> Dashboard</p> -->
@@ -43,7 +44,7 @@
           >Create</a>
         <span
           ngbDropdownMenu
-          class="dropdown-menu"
+          class="dropdown-menu-create"
           aria-labelledby="navbarDropdown">
           <a ngbDropdownItem class="dropdown-item" (click)="onCreateProject()">Project</a>
           <a ngbDropdownItem class="dropdown-item" (click)="onCreateJira()">Jira</a>
@@ -74,6 +75,7 @@
   <span *ngFor="let epic of epics">
     <app-epicjira [epic]="epic" [x]="x"></app-epicjira>
   </span>
+  <!-- <img src="/assets/img/to-do-bg.png" alt="" class = "dialog-image"> -->
 </div>
 
 </div>

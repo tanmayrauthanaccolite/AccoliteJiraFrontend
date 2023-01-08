@@ -69,7 +69,8 @@ export class CreateJiraComponent{
         jiraType:this.createJiraFormService.createJiraForm.value.jiraType,
         jiraepic:this.createJiraFormService.createJiraForm.value.jiraLinkedIssue,
         employee:this.employee,
-        jiraprojects:this.project
+        jiraprojects:this.project,
+        jiraPriority:this.createJiraFormService.createJiraForm.value.jiraPriority
       }
       // this.jira.jiraTitle=this.createJiraFormService.createJiraForm.value.jiraTitle;
       // this.jira.jiraDescription=this.createJiraFormService.createJiraForm.value.jiraDescription;

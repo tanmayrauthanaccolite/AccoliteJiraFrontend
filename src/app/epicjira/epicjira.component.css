@@ -1,8 +1,8 @@
 .prio{
-    width: 10px;
-    height:10px;
+    width: 3px;
+    height:80px;
     position: absolute;
-    top:21px;
+    top:9px;
     left:10px;
 }
 .circle{
@@ -118,10 +118,46 @@ mat-grid-tile{
     /* height:280px; */
 }
 
-.create-icon{
+/* .create-icon{
     position: relative;
     top:8px;
     margin-left: 2px;
     position: absolute;
     font-size: large;
+} */
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+li{
+    list-style: none;
+}
+
+.options{
+    cursor: pointer;
+    position: absolute;
+    top:2px;
+    margin-left: 2px;
+    position: absolute;
+    font-size: large;
+}
+
+.dropdown-item{
+    cursor: pointer;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.dropdown-menu{
+    --bs-dropdown-padding-y: 0.0rem;
+}
+
+.dropdown-menu-vert{
+    position: absolute;
+    inset: auto auto 0px 0px;
+    margin: 0px;
+    transform: translate(0px, -2px);
 }
