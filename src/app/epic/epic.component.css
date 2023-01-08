@@ -263,3 +263,9 @@ li {
 .dropdown-menu-create{
   transform: translate(0px, 0px);
 }
+
+.icon-visibility{
+  position: absolute;
+  top: 95px;
+  left: 45px;
+}
