@@ -7,8 +7,12 @@ import { Task } from '../task';
   styleUrls: ['./taskjira.component.css']
 })
 export class TaskjiraComponent {
-  @Input() task :Task;
+  @Input() task :any;
   @Input() x : any;
+  
+  ngOnInit(){
+    console.log(this.task)
+  }
 
   changePriorityColor(num:number){
     switch(num){

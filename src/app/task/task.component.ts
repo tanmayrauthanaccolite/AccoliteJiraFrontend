@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { Epic } from '../epic';
-import { Task } from '../task';
 import { TaskService } from '../task.service';
 import {Employee} from '../employee';
-import { SlicePipe } from '@angular/common';
+import { Jira } from '../jira';
+import { Project } from '../project';
+import { ProjectService } from '../services/project.service';
+import { Epic } from '../epic';
+import { CreateSprintService } from '../services/create-sprint.service';
 
 @Component({
   selector: 'app-task',
@@ -11,25 +13,69 @@ import { SlicePipe } from '@angular/common';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent {
-constructor(public taskservice:TaskService){}
+constructor(public taskservice:TaskService,
+  public projectService :ProjectService,
+  public sprintService:CreateSprintService
+  ){}
 phase=["To-Do","In Progress","Done"]
-tasks:Task[];
-employees:Employee[];
+tasks:any;
+curemployee:any;
+currEpic:any;
+project:any;
+employees:any;
+projectId:any;
+Epics:any;
+sprintAll:any;
+othertasks:any;
 ngOnInit():void{
-this.taskservice.getAllTasks().subscribe((tasksArray)=>{this.tasks=tasksArray});
-this.taskservice.getEmployees().subscribe((data)=>{this.employees=data;console.log(data);console.log(this.employees);});
+this.taskservice.getTaskofEpic().subscribe((data)=>{this.tasks=data;
+console.log(data);
+});
+this.taskservice.getProjectByepicId().subscribe((data)=>{
+  this.projectId=data;
+  this.projectService.getProjectByProjectID(this.projectId).subscribe((value)=>{
+    this.project=value;
+    this.employees=this.project.employees;
+    console.log(value);
+  });
+  this.taskservice.getEpicByProjectID(this.projectId).subscribe((value)=>{
+    this.Epics=value;
+  });
+})
+this.taskservice.epic.subscribe((value)=>{
+  this.currEpic=value;
+})
+
+this.sprintService.getTaskOfSprint().subscribe((data)=>{this.sprintAll=data});
+// this.taskservice.getalltask().subscribe((data)=>{
+//   this.tasks=data;
+// })
+this.taskservice.employeeObservable.subscribe((data)=>{
+  this.curemployee=data;
+  console.log(data);
+});
 }
-// nav function
+
+// this.sprintService.getOtherTasksOfEmployee(this.curemployee,this.)
 openNav() {
   document.getElementById("mySidenav").style.width="250px";
 }
 closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
-getJiraOfEmployee(alias:String)
-{
-  console.log("hiiii");
-  this.taskservice.getTasksofEmployee(alias).subscribe((tasksArray)=>{this.tasks=tasksArray;console.log(this.tasks);});
+onCreateSprint(){
 }
+EmpAllTask(employeeId){
+this.taskservice.getAllTaskOfEmployeeOfEpic(employeeId,this.projectId).subscribe((value)=>this.tasks=value);
+}
+taskOfEpic(jiraId){
+this.taskservice.jiraid=jiraId;
+this.taskservice.getTaskofEpic().subscribe((value)=>this.tasks=value);
+this.ngOnInit;
+}
+
+// getTaskOfSprint(){
+//   this.sprintService.getTaskOfSprintBySprintId().subscribe();
+// }
 
 }

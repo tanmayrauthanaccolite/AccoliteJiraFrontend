@@ -2,6 +2,9 @@ import { Component,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Epic } from '../epic';
 import { TaskService } from '../task.service';
+import { EditJiraService } from '../services/edit-jira.service';
+import { EditJiraComponent } from '../edit-jira/edit-jira.component';
+import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
 @Component({
   selector: 'app-epicjira',
   templateUrl: './epicjira.component.html',
@@ -9,11 +12,15 @@ import { TaskService } from '../task.service';
 })
 export class EpicjiraComponent {
 @Input() epic :any;
+@Input() project:any;
+@Input() employee:any;
 @Input() x : any;
 
 constructor(
   private taskService:TaskService,
-  private _router: Router
+  private _router: Router,
+  public editJiraService:EditJiraService,
+  public dialog : MatDialog
   ){}
 
 changePriorityColor(num:number){
@@ -24,14 +31,26 @@ switch(num){
   default: return 'green';
 }
 }
-displayTasks()
+displayTasks(epic:any)
 {
-  console.log("hi");
-  this.taskService.displayTasks();
+  this.taskService.jiraid=epic.jiraId;
+  setTimeout(()=>{
+    this.taskService.getEpicID(epic);
+    this.taskService.getEmployee(this.employee);
+  },1000);
   this._router.navigate(['/sprint']);
 }
 
 editJira(){
-  console.log("Hi");
+  console.log(this.editJiraService.editJiraForm)
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.disableClose = true;
+  dialogConfig.autoFocus = true;
+  setTimeout(()=>{
+    this.editJiraService.getProject(this.project);
+    this.editJiraService.getLoggedInUser(this.employee);
+  }, 1000);
+  this.dialog.open(EditJiraComponent,{height: '70%',
+  width: '40%'});
 }
 }

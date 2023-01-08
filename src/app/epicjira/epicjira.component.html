@@ -5,24 +5,25 @@
   style="background-color: white"
   *ngIf="epic.jiraStatus == x"
 >
-  <mat-grid-tile (click)="displayTasks()">
-    <!-- <div>
-      <div class = "assignee-details">
-        <div class="circle text-uppercase">{{ epic.jiraAssignee.charAt(0) }}</div>
-        <div class="assignee">{{ epic.jiraAssignee }}</div>
-      </div>
+  <mat-grid-tile>
+       <div id = "leftbox">
       <p class="epicid">{{ epic.jiraId }}</p>
-      <p class="epiclabel">{{ epic.jiraTitle }}<mat-icon class="icon">offline_bolt</mat-icon></p> -->
-      <!-- <div class="prio" [style.background]="changePriorityColor(epic.priority)"></div> -->
-          <!-- <div class="desc">{{epic.jiraDescription}}</div>
-    </div> -->
-
-
-
-
-    <div id = "leftbox">
-      <p class="epicid">{{ epic.jiraId }}</p>
-      <p class="epiclabel">{{ epic.jiraTitle }}<mat-icon class="icon">offline_bolt</mat-icon> <mat-icon class="create-icon" (click) = "editJira()">create</mat-icon></p>
+      <p class="epiclabel">{{ epic.jiraTitle }}<mat-icon class="icon">offline_bolt</mat-icon> 
+        <li ngbDropdown class="nav-item dropdown">
+          <a ngbDropdownToggle class="sidenav-content nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><mat-icon class = "options">more_vert</mat-icon></a>
+          <span
+            ngbDropdownMenu
+            class="dropdown-menu-vert"
+            aria-labelledby="navbarDropdown">
+            <a ngbDropdownItem class="dropdown-item" (click)="editJira()">/View</a>
+            <a ngbDropdownItem class="dropdown-item" (click)="displayTasks(epic)">Sprint</a>
+          </span>
+        </li>
+      </p>
       <div class="desc">{{epic.jiraDescription}}</div>
     </div> 
 

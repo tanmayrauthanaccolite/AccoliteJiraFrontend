@@ -1,34 +1,85 @@
 <header>
-    <div class="hamburger" (click)="openNav()">&#9776;</div>
-    <div id="mySidenav" class="sidenav">
-      <a class="closebtn" (click)="closeNav()">&times;</a>
-      <a>Chose Sprint</a>
-      <li ngbDropdown  class="nav-item dropdown">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><mat-icon class="iconPeople">account_box</mat-icon>People</a>
-        <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <button *ngFor="let employee of employees" ngbDropdownItem class="dropdown-item" (click)="getJiraOfEmployee(employee.alias)">
-            {{employee.alias}}
-          </button>
+  <img class="accolitelogo" src="assets/img/jira-logo.png" alt="" /><br />
+  <div class="hamburger" (click)="openNav()">&#9776;</div>
+  <div id="mySidenav" class="sidenav">
+    <a class="closebtn" (click)="closeNav()">&times;</a>
+    <li ngbDropdown  class="nav-item dropdown">
+      <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">View Sprints</a>
+      <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <button ngbDropdownItem class="dropdown-item" *ngFor="let sprint of sprintAll">
+          {{sprint.sprintDescription}}</button>
+      </span>
+</li>
+        <li ngbDropdown  class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
+          aria-expanded="false"><mat-icon class="iconPeople">account_box</mat-icon>People</a>
+          <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <button (click)="EmpAllTask(emp.employeeId)" ngbDropdownItem class="dropdown-item" *ngFor="let emp of employees">
+              {{emp.name}}</button>
+          </span>
+    </li>
+
+    <li ngbDropdown  class="nav-item dropdown">
+      <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+      data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">Add task to Sprint</a>
+      <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <button ngbDropdownItem class="dropdown-item"
+        *ngFor="let task of tasks">
+          {{task.jiraId}}:{{task.jiraTitle}}</button>
+      </span>
+    </li>
+
+    <li ngbDropdown  class="nav-item dropdown">
+      <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
+      aria-expanded="false"><mat-icon class="iconPeople">offline_bolt</mat-icon>Epics</a>
+      <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <button (click)="taskOfEpic(epic.jiraId)" ngbDropdownItem class="dropdown-item" *ngFor="let epic of Epics">
+          {{epic.jiraId}}:{{epic.jiraTitle}}</button>
+      </span>
+</li>
+  </div>
+  <nav class="navbar navbar-expand-lg">
+    <ul class="navbar-nav">
+      <li>
+        <a style="color: #ffff" class="navbar-ele nav-link" href="#">Home</a>
+      </li>
+      <li ngbDropdown class="nav-item dropdown navbar-ele">
+        <a
+          ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Create</a>
+        <span
+          ngbDropdownMenu
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown">
+          <a ngbDropdownItem class="dropdown-item" (click) = "onCreateSprint()">Sprint</a>
         </span>
       </li>
-    </div>
-      <nav class="navbar navbar-expand-lg ">
-        <!-- <p  class="display-6"> Dashboard</p> -->
-            <ul class="navbar-nav">
-              <li >
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li >
-                <a class="nav-link" href="#">Project</a>
-              </li>
-              <li >
-                <a class="nav-link" href="#">Create</a>
-              </li>
-            </ul>
-        </nav>
-        <p class="sprint">Sprint view</p>
-  </header>
-<div *ngFor="let x of phase">
-    <h4>{{x}}</h4>
-    <span *ngFor="let task of tasks"><app-taskjira [task]="task" [x]="x"></app-taskjira> </span> 
+      <li class="navbar-icon1">
+        <mat-icon>help_outline</mat-icon>
+      </li>
+      <li class="navbar-icon2">
+        <mat-icon>account_circle</mat-icon>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="project-name">
+<h3 class>Epic:{{currEpic.jiraTitle}}</h3>
+</div>
+<div *ngFor="let x of phase" class="phase-container">
+  <div class="sticky-element">
+    <h4 class="phase-heading">{{ x }}</h4>
+    <hr class="separator" />
+  </div>
+  <div class="epic-container">
+  <span *ngFor="let task of tasks"><app-taskjira [task]="task" [x]="x"></app-taskjira> </span>
+</div>
 </div>

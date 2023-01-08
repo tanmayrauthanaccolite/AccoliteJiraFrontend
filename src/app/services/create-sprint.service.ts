@@ -23,6 +23,9 @@ export class CreateSprintService {
     // console.log(data);
     return this.http.post(this.url,data);
   }
+  getTaskOfSprint(){
+    return this.http.get("http://localhost:8080/sprint/viewSprint")
+  }
   
 }
 

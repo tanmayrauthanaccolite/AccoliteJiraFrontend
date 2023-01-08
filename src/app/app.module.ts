@@ -27,6 +27,7 @@ import { CreateSprintService } from './services/create-sprint.service';
 import { ProjectInfoComponent } from './epic/project-info/project-info.component';
 import { UserInfoComponent } from './epic/user-info/user-info.component';
 import { AddPeopleComponent } from './epic/add-people/add-people.component';
+import { EditJiraComponent } from './edit-jira/edit-jira.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { AddPeopleComponent } from './epic/add-people/add-people.component';
     CreateSprintComponent,
     ProjectInfoComponent,
     UserInfoComponent,
-    AddPeopleComponent
+    AddPeopleComponent,
+    EditJiraComponent
   ],
   imports: [
     BrowserModule,

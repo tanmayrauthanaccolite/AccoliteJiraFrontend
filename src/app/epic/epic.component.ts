@@ -17,6 +17,7 @@ import { Employee } from '../employee';
 import { ProjectService } from '../services/project.service';
 import { Project } from '../project';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { EditJiraService } from '../services/edit-jira.service';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class EpicComponent {
     public dialog : MatDialog,
     public authService:AuthService,
     private epicService:EpicService,
+    private editJiraService:EditJiraService,
     private projectService:ProjectService,
     private route:ActivatedRoute,
     private _router: Router,
@@ -98,6 +100,11 @@ ngOnInit(){
         this.projectService.getEpicsOfProject(this.curProject.projectId).subscribe((epicData)=>{
         this.epics=epicData;
         console.log(this.epics);
+        setTimeout(()=>{
+          this.editJiraService.getProject(this.curProject);
+          this.editJiraService.getAllEpicsOfProject(this.epics);
+          this.editJiraService.getLoggedInUser(this.employee);
+        }, 1000);
       });
     // this.authService.employeeob.subscribe((ema)=>{
     //  
@@ -151,8 +158,9 @@ addPeople(){
   })
 }
 
-callProject(project:Project){
-  this.projectService.getEpicsOfProject(project.projectid).subscribe((epicData)=>{
+callProject(project:any){
+  console.log(project);
+  this.projectService.getEpicsOfProject(project.projectId).subscribe((epicData)=>{
     this.epics=epicData;
     this.curProject=project;
    this.ngOnInit;
@@ -160,6 +168,7 @@ callProject(project:Project){
 }
 ViewSprint(projectid:number){
   this.taskservice.projectid=projectid;
+  this.taskservice.getEmployee(this.employee);
   this._router.navigate(['/sprint']);
 }
 EmpAllEpics(alias:string){

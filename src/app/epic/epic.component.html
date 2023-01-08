@@ -13,7 +13,7 @@
       </span>
     </li>
     <a (click)="ViewSprint(curProject.projectId)">View Sprint</a>
-    
+
     <li ngbDropdown  class="nav-item dropdown">
       <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
       aria-expanded="false"><mat-icon class="iconPeople">account_box</mat-icon>People</a>
@@ -65,7 +65,7 @@
   </nav>
 </header>
 <div class="project-name">
-  <h3 class>Name of the project</h3>
+  <h3 class>Project:{{curProject.projectLabel}}</h3>
 </div>
 <div *ngFor="let x of phase" id="main" class="phase-container">
   <!-- for printing different phases -->
@@ -75,7 +75,7 @@
   </div>
 <div class="epic-container">
   <span *ngFor="let epic of epics">
-    <app-epicjira [epic]="epic" [x]="x"></app-epicjira>
+    <app-epicjira [epic]="epic" [x]="x" [project]="curProject" [employee]="employee"></app-epicjira>
   </span>
 </div>
 
