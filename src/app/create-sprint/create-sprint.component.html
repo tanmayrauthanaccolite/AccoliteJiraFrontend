@@ -3,11 +3,12 @@
 <form [formGroup] = "createSprintFormService.createSprintForm" class = "create-sprint-form" (ngSubmit) = "saveSprint()">
 <div class = "form-container">
     <p>
-        <mat-form-field class="form-full-width">
-          <mat-label>Project Name</mat-label>
+        <mat-label>{{project.projectLabel}}</mat-label>
+        <!-- <mat-form-field class="form-full-width">
+          
           <input formControlName = "projectId" matInput> 
           <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
     </p>
 
     <hr>
@@ -50,17 +51,17 @@
             </mat-form-field>
   </p>
   
-  <p>
+  <!-- <p>
     <mat-form-field class="form-full-width">
       <mat-label>isActive</mat-label>
       <input formControlName = "isCurrent" matInput> 
       <mat-error>This field is mandatory</mat-error>
     </mat-form-field>
-</p>
+</p> -->
 </div>
 <div class = "dialog-buttons-div">
   <button class = "dialog-button" mat-raised-button color = "warn" (click) = "onClear()">Clear</button>
-  <button mat-button color= "primary" class = "dialog-button" type = "submit" mat-raised-button [disabled] = "createSprintFormService.createSprintForm.invalid">Create</button>
+  <button mat-button color= "primary" class = "dialog-button" type = "submit">Create</button>
   </div>
 </form>
 </div>

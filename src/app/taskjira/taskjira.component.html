@@ -1,5 +1,5 @@
 <!-- print task details  -->
-<mat-grid-list cols="1" rowHeight="100px" style="background-color: white;" *ngIf="task.jiraStatus == x" >
+<!-- <mat-grid-list cols="1" rowHeight="100px" style="background-color: white;" *ngIf="task.jiraStatus == x" >
   <mat-grid-tile>
       <div>
         <div class="circle text-uppercase">{{task.jiraAssignee.charAt(0)}}</div>
@@ -8,8 +8,40 @@
         <div class="epiclabel" >{{task.jiraTitle}}
         <mat-icon class="icon">check_circle</mat-icon>
         </div>
-        <!-- <div class="prio" [style.background]="changePriorityColor(task.jiraPriority)"></div> -->
-        <div class="desc">{{task.jiraType}}</div>
+        <div class="prio" [style.background]="changePriorityColor(task.jiraPriority)"></div> -->
+     <!-- <--   <div class="desc">{{task.jiraType}}</div>
       </div>
 </mat-grid-tile>
+</mat-grid-list> -->
+<mat-grid-list
+  cols="1"
+  rowHeight="100px"
+  style="background-color: white"
+  *ngIf="task.jiraStatus == x"
+>
+    <mat-grid-tile>
+    <div id = "leftbox">
+      <div class="prio" [style.background]="changePriorityColor(task.jiraPriority)"></div>
+      <p class="epicid">{{ task.jiraId }}</p>
+      <p class="epiclabel">{{ task.jiraTitle }}<mat-icon class="icon">check_circle</mat-icon></p>
+      <div class="desc">{{task.jiraDescription}}</div>
+    </div>
+    <div id = "rightbox" class = "assignee-details">
+      <li ngbDropdown class="nav-item dropdown">
+        <a ngbDropdownToggle class="sidenav-content nav-link dropdown-toggle" id="navbarDropdown" role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          ><mat-icon class = "options">more_vert</mat-icon></a>
+        <span
+          ngbDropdownMenu
+          class="dropdown-menu-vert"
+          aria-labelledby="navbarDropdown">
+          <a ngbDropdownItem class="dropdown-item" (click)="editTask(task)">Edit/View</a>
+        </span>
+      </li>
+      <div class="circle text-uppercase">{{ task.jiraAssignee.charAt(0) }}</div>
+      <div class="assignee">{{ task.jiraAssignee }}</div>
+    </div>
+  </mat-grid-tile>
 </mat-grid-list>

@@ -28,6 +28,7 @@ import { ProjectInfoComponent } from './epic/project-info/project-info.component
 import { UserInfoComponent } from './epic/user-info/user-info.component';
 import { AddPeopleComponent } from './epic/add-people/add-people.component';
 import { EditJiraComponent } from './edit-jira/edit-jira.component';
+import { EpicInfoComponent } from './task/epic-info/epic-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { EditJiraComponent } from './edit-jira/edit-jira.component';
     ProjectInfoComponent,
     UserInfoComponent,
     AddPeopleComponent,
-    EditJiraComponent
+    EditJiraComponent,
+    EpicInfoComponent
   ],
   imports: [
     BrowserModule,

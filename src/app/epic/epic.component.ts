@@ -72,14 +72,6 @@ onCreateProject(){
  width: '40%'});
 }
 
-onCreateSprint(){
-  console.log(this.createSprintFormService.createSprintForm)
-  const dialogConfig = new MatDialogConfig();
-  dialogConfig.disableClose = true;
-  dialogConfig.autoFocus = true;
- this.dialog.open(CreateSprintComponent,{height: '95%',
- width: '60%',})
-}
 
 ngOnInit(){
   this.route.paramMap.subscribe((params:ParamMap)=>{
@@ -168,7 +160,9 @@ callProject(project:any){
 }
 ViewSprint(projectid:number){
   this.taskservice.projectid=projectid;
-  this.taskservice.getEmployee(this.employee);
+  setTimeout(()=>{
+    this.taskservice.getEmployee(this.employee);
+  },1000);
   this._router.navigate(['/sprint']);
 }
 EmpAllEpics(alias:string){

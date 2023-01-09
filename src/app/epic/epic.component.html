@@ -7,7 +7,7 @@
     
     <li ngbDropdown  class="nav-item dropdown">
       <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
-      aria-expanded="false">Project</a>
+      aria-expanded="false"><mat-icon class="icon-bulb">lightbulb</mat-icon>Project</a>
       <span ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
         <button (click)="callProject(SelectedProject) ;getEmployeesByProject(SelectedProject.projectid)" ngbDropdownItem class="dropdown-item"  *ngFor="let SelectedProject of projects">
           {{SelectedProject.projectLabel}}:{{SelectedProject.projectDescription}}</button>
@@ -24,7 +24,7 @@
       </span>
     </li>
 
-    <a> <mat-icon class="iconAddPeople" (click) = "addPeople()">add</mat-icon>Add People</a>
+    <a (click) = "addPeople()"> <mat-icon class="iconAddPeople">add</mat-icon>Add People</a>
     <img src="/assets/img/side-nav.png" alt="" class = "sidenav-image">
 
   </div>

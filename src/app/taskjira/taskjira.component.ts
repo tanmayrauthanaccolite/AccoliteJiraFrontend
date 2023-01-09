@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MatDialogConfig } from '@angular/material/dialog';
 import { Task } from '../task';
 
 @Component({
@@ -9,10 +10,25 @@ import { Task } from '../task';
 export class TaskjiraComponent {
   @Input() task :any;
   @Input() x : any;
-  
+  tasks:any;
   ngOnInit(){
-    console.log(this.task)
+    this.tasks=this.task
+    console.log("Hello")
+    console.log(this.tasks)
   }
+  editTask(task:any){
+    // console.log(this.editJiraService.editJiraForm)
+    // const dialogConfig = new MatDialogConfig();
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    // setTimeout(()=>{
+    //   this.editJiraService.getProject(this.tasks.jiraprojects.projectId);
+    //   this.editJiraService.getLoggedInUser(this.employee);
+    // }, 1000);
+    // this.dialog.open(EditJiraComponent,{height: '70%',
+    // width: '40%'});
+  }
+  
 
   changePriorityColor(num:number){
     switch(num){

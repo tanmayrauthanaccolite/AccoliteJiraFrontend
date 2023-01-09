@@ -34,6 +34,8 @@ switch(num){
 }
 displayTasks(epic:any)
 {
+  this.taskService.projectid=this.project.projectId;
+  console.log(this.project.projectId);
   this.taskService.jiraid=epic.jiraId;
   setTimeout(()=>{
     this.taskService.getEpicID(epic);
@@ -50,6 +52,8 @@ editJira(){
   setTimeout(()=>{
     this.editJiraService.getProject(this.project);
     this.editJiraService.getLoggedInUser(this.employee);
+    this.editJiraService.getEpic(this.epic);
+    this.editJiraService.initilizeform();
   }, 1000);
   this.dialog.open(EditJiraComponent,{height: '70%',
   width: '40%'});
